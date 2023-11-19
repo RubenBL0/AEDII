@@ -1,5 +1,7 @@
 package TADs.Arboles.ArbolBinario;
 
+import TADs.Arboles.ArbolVacioExcepcion;
+
 /**
  *
  * @author Ruben Blanco

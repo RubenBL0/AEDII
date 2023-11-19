@@ -1,4 +1,4 @@
-package TADs.Arboles.ArbolBinario;
+package TADs.Arboles;
 
 /**
  *

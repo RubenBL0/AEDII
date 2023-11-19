@@ -1,5 +1,6 @@
 package TADs.Arboles.ArbolBinario;
 
+import TADs.Arboles.ArbolVacioExcepcion;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
