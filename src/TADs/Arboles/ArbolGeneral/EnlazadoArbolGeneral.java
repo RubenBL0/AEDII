@@ -68,13 +68,15 @@ public class EnlazadoArbolGeneral<E> implements ArbolGeneral<E> {
     public void setHijo(ArbolGeneral<E> hijo) throws ArbolVacioExcepcion, NullPointerException {
         if(esVacio()) throw new ArbolVacioExcepcion();
         if(hijo == null) throw new NullPointerException();
-        if(hijoMasIzq() == null) nodoRaiz.setHijoMasIzq(((EnlazadoArbolGeneral)hijo).nodoRaiz);
-        
-        ArbolGeneral ultimoHijo = hijoMasIzq();
-        while(!ultimoHijo.hermanoDer().esVacio()){
-            ultimoHijo = ultimoHijo.hermanoDer();
+        if(hijoMasIzq().esVacio()){
+            nodoRaiz.setHijoMasIzq(((EnlazadoArbolGeneral)hijo).nodoRaiz);
+        }else{
+            ArbolGeneral ultimoHijo = hijoMasIzq();
+            while(!ultimoHijo.hermanoDer().esVacio()){
+                ultimoHijo = ultimoHijo.hermanoDer();
+            }
+            ((EnlazadoArbolGeneral)ultimoHijo).nodoRaiz.setHermanoDer(((EnlazadoArbolGeneral)hijo).nodoRaiz);
         }
-        ((EnlazadoArbolGeneral)ultimoHijo).nodoRaiz.setHermanoDer(((EnlazadoArbolGeneral)hijo).nodoRaiz);
     }
 
     @Override
